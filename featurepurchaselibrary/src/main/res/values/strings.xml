@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Feature Purchase Library</string>
+    <string name="title_activity_feature_purchase">%s Premium Features</string>
+    <string name="buy">Buy</string>
+    <string name="byMonth">/mo</string>
+    <string name="dollarPrice">US$ %.2f</string>
+</resources>
