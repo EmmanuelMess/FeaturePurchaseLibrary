@@ -1,21 +1,23 @@
 package com.emmanuelmess.featurepurchaselibrary
 
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity;
 import com.emmanuelmess.featurepurchaselibrary.ArgumentConstants.ACTIVITY_CLASS_STRING
 import com.emmanuelmess.featurepurchaselibrary.ArgumentConstants.ACTIVITY_NAME_STRING
+import com.emmanuelmess.featurepurchaselibrary.ArgumentConstants.BUY_CLASS_NAME_STRING
 import com.emmanuelmess.featurepurchaselibrary.ArgumentConstants.FEATURES_STRING_LIST
+import com.emmanuelmess.featurepurchaselibrary.ArgumentConstants.BUY_METHOD_NAME_STRING
 import com.emmanuelmess.featurepurchaselibrary.ArgumentConstants.PRICE_FLOAT
 
 import kotlinx.android.synthetic.main.activity_feature_purchase.*
 import kotlinx.android.synthetic.main.content_feature_purchase.*
 
 class FeaturePurchaseActivity : AppCompatActivity() {
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +48,12 @@ class FeaturePurchaseActivity : AppCompatActivity() {
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun onClickBuy(view: View) {
+        Class.forName(intent.getStringExtra(BUY_CLASS_NAME_STRING)!!)
+            .getMethod(intent.getStringExtra(BUY_METHOD_NAME_STRING)!!, Context::class.java)
+            .invoke(null, applicationContext)
     }
 
 }

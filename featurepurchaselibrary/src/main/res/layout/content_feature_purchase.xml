@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@color/colorBuyButton"
+        android:onClick="onClickBuy"
         android:text="@string/buy"
         app:backgroundTint="@color/colorBuyButton"
         app:layout_constraintEnd_toEndOf="parent"
